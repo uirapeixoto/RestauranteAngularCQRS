@@ -1,0 +1,11 @@
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\bin\Debug\netcoreapp2.0\Cafe.Infra.deps.json
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\bin\Debug\netcoreapp2.0\Cafe.Infra.dll
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\obj\Debug\netcoreapp2.0\Cafe.Infra.csproj.CoreCompileInputs.cache
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\obj\Debug\netcoreapp2.0\Cafe.Infra.AssemblyInfoInputs.cache
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\obj\Debug\netcoreapp2.0\Cafe.Infra.AssemblyInfo.cs
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\bin\Debug\netcoreapp2.0\Cafe.Infra.pdb
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\obj\Debug\netcoreapp2.0\Cafe.Infra.csprojResolveAssemblyReference.cache
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\obj\Debug\netcoreapp2.0\Cafe.Infra.dll
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\obj\Debug\netcoreapp2.0\Cafe.Infra.pdb
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\bin\Debug\netcoreapp2.0\Cafe.Infra.runtimeconfig.json
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\bin\Debug\netcoreapp2.0\Cafe.Infra.runtimeconfig.dev.json

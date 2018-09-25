@@ -1,0 +1,3 @@
+https://docs.microsoft.com/pt-br/ef/core/get-started/aspnetcore/existing-db
+Para criar os modelos a partir do banco de dados existente
+Scaffold-DbContext "Server=NBO1340\SQLEXPRESS;Database=DB_CAFE;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Data

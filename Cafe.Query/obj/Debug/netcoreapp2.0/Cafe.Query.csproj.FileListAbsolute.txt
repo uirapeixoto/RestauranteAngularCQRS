@@ -1,0 +1,9 @@
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.csprojResolveAssemblyReference.cache
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.csproj.CoreCompileInputs.cache
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.AssemblyInfoInputs.cache
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.AssemblyInfo.cs
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Query.deps.json
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Query.dll
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Query.pdb
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.dll
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.pdb
