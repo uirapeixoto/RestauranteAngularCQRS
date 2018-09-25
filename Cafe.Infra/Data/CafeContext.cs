@@ -2,7 +2,7 @@
 
 namespace Cafe.Infra.Data
 {
-    public partial class CafeContext : DbContext
+    public partial class CafeContext : DbContext, ICafeContext
     {
         public CafeContext()
         {

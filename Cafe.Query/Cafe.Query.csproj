@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Cafe.Contract\Cafe.Contract.csproj" />
+    <ProjectReference Include="..\Cafe.Infra\Cafe.Infra.csproj" />
+  </ItemGroup>
+
 </Project>

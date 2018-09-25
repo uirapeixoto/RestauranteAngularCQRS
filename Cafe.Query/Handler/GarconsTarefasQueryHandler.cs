@@ -1,0 +1,62 @@
+﻿using Cafe.Contract;
+using Cafe.Infra.Data;
+using Cafe.Query.Query;
+using Cafe.Query.Result;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Cafe.Query.Handler
+{
+    public class GarconsTarefasQueryHandler : IQueryHandler<GarconsTarefasQuery, IEnumerable<MesaAbertaQueryResult>>
+    {
+        readonly ICafeContext _context;
+
+        public GarconsTarefasQueryHandler(ICafeContext context)
+        {
+            _context = context;
+        }
+
+        public IEnumerable<MesaAbertaQueryResult> Handle(GarconsTarefasQuery query)
+        {
+            var mesas = _context.TbTabOpened
+                 .AsNoTracking()
+                 .Where(e => e.StActive)
+                 .Where(g => g.IdWaiter == query.Id)
+                 .Include(p => p.TbOrdered)
+                 .Include(p => p.IdWaiterNavigation)
+                 .AsParallel()
+                 .Select(o => new MesaAbertaQueryResult(
+                         o.Id,
+                         o.NuTable.Value,
+                         new GarcomQueryResult(o.IdWaiterNavigation.Id, o.IdWaiterNavigation.DsName),
+                         o.TbOrdered.Where(x => x.TbOrderedItem.Any()).Select(
+                             p => new PedidoQueryResult(
+                             p.Id,
+                             p.TbOrderedItem
+                             .Where(x => !x.DtServed.HasValue)
+                             .Select(i => new PedidoItemQueryResult(
+                                     i.Id,
+                                     new MenuItemQueryResult(
+                                         i.IdMenuItemNavigation.Id,
+                                         i.IdMenuItemNavigation.NuMenuItem,
+                                         i.IdMenuItemNavigation.DsDescription,
+                                         i.IdMenuItemNavigation.NuPrice,
+                                         i.IdMenuItemNavigation.StIsDrink,
+                                         i.IdMenuItemNavigation.StActive
+                                     ),
+                                     i.NuAmount,
+                                     i.DtToServe,
+                                     i.DtInPreparation,
+                                     i.DtServed,
+                                     i.DsDescription
+                             ))
+                         )),
+                         o.DtService,
+                         o.StActive
+                 )).ToList();
+
+            return mesas;
+        }
+    }
+}

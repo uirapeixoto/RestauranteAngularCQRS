@@ -7,3 +7,8 @@ D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\bin\Debug\netco
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Query.pdb
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.dll
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.pdb
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Contract.dll
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Infra.dll
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Contract.pdb
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Infra.pdb
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.csproj.CopyComplete
