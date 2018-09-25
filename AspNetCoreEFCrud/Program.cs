@@ -9,6 +9,7 @@ namespace AspNetCoreEFCrud
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }
