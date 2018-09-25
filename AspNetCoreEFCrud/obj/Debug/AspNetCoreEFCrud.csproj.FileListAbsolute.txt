@@ -1,0 +1,6 @@
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\AspNetCoreEFCrud\bin\Debug\AspNetCoreEFCrud.exe
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\AspNetCoreEFCrud\bin\Debug\AspNetCoreEFCrud.pdb
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\AspNetCoreEFCrud\obj\Debug\AspNetCoreEFCrud.csprojResolveAssemblyReference.cache
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\AspNetCoreEFCrud\obj\Debug\AspNetCoreEFCrud.csproj.CoreCompileInputs.cache
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\AspNetCoreEFCrud\obj\Debug\AspNetCoreEFCrud.exe
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\AspNetCoreEFCrud\obj\Debug\AspNetCoreEFCrud.pdb
