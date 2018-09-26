@@ -1,2 +1,10 @@
 .vs/
+packages/
+Cafe.AppConsole/obj/Debug/
+Cafe.AppConsole/bin/Debug/
+Cafe.Infra/obj/Debug/
+Cafe.Infra/bin/Debug/
+Cafe.Query/obj/Debug/
+Cafe.Query/bin/Debug/
+
 *.dll

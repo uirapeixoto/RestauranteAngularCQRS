@@ -37,7 +37,7 @@ namespace AspNetCoreEFCrud.Web
 
             IntegrateSimpleInjector(services);
 
-            var connection = @"Server=NBO1340\\SQLEXPRESS;Database=DB_CAFE;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = @"Server=.\\SQLEXPRESS;Database=DB_CAFE;Trusted_Connection=True;ConnectRetryCount=30";
             services.AddDbContext<CafeContext>(options => options.UseSqlServer(connection));
         }
 
@@ -62,6 +62,7 @@ namespace AspNetCoreEFCrud.Web
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             // Add custom middleware
+            InitializeContainer(app);
             /*app.UseMiddleware<CustomMiddleware1>(container);
             app.UseMiddleware<CustomMiddleware2>(container);*/
 
@@ -104,9 +105,13 @@ namespace AspNetCoreEFCrud.Web
 
         private void InitializeContainer(IApplicationBuilder app)
         {
+            container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
+
+
             // Add application presentation components:
             container.RegisterMvcControllers(app);
             container.RegisterMvcViewComponents(app);
+
 
             //Registrando o contexto
             container.Register<ICafeContext, CafeContext>(Lifestyle.Scoped);

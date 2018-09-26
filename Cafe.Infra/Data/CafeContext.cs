@@ -4,10 +4,6 @@ namespace Cafe.Infra.Data
 {
     public partial class CafeContext : DbContext, ICafeContext
     {
-        public CafeContext()
-        {
-        }
-
         public CafeContext(DbContextOptions<CafeContext> options)
             : base(options)
         {
@@ -27,8 +23,7 @@ namespace Cafe.Infra.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=NBO1340\\SQLEXPRESS;Database=DB_CAFE;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=NBO1340\\SQLEXPRESS;Database=DB_CAFE;Trusted_Connection=True;");
             }
         }
 

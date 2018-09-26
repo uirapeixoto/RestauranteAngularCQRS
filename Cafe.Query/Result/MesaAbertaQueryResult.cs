@@ -13,6 +13,11 @@ namespace Cafe.Query.Result
         public DateTime? DataServico { get; }
         public bool Ativo { get; }
 
+        private MesaAbertaQueryResult()
+        {
+            Pedidos = new List<PedidoQueryResult>();
+        }
+
         public MesaAbertaQueryResult(int id, int numMesa, GarcomQueryResult garcom, IEnumerable<PedidoQueryResult> pedidos, DateTime? dataServico, bool ativo)
         {
             Id = id;
@@ -22,5 +27,7 @@ namespace Cafe.Query.Result
             DataServico = dataServico;
             Ativo = ativo;
         }
+
+        
     }
 }

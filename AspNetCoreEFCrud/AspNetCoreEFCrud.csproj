@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SimpleInjector, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.3.0\lib\net40\SimpleInjector.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,6 +45,23 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cafe.Domain\Cafe.Domain.csproj">
+      <Project>{425c10fc-647f-4a64-85b7-d14198e9abcf}</Project>
+      <Name>Cafe.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cafe.Infra\Cafe.Infra.csproj">
+      <Project>{0b57db9e-5cbd-4ce4-ac2a-af65425f9180}</Project>
+      <Name>Cafe.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cafe.Query\Cafe.Query.csproj">
+      <Project>{9827d3ba-a551-42f9-90c2-eb2b36838c28}</Project>
+      <Name>Cafe.Query</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
