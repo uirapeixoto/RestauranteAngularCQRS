@@ -37,8 +37,9 @@ namespace AspNetCoreEFCrud.Web
 
             IntegrateSimpleInjector(services);
 
-            var connection = @"Server=.\\SQLEXPRESS;Database=DB_CAFE;Trusted_Connection=True;ConnectRetryCount=30";
-            services.AddDbContext<CafeContext>(options => options.UseSqlServer(connection));
+            /*var connection = @"Server=.\\SQLEXPRESS;Database=DB_CAFE;Trusted_Connection=True;ConnectRetryCount=30";
+            services.AddDbContext<CafeContext>(options => options.UseSqlServer(connection));*/
+
         }
 
         private void IntegrateSimpleInjector(IServiceCollection services)
@@ -61,12 +62,6 @@ namespace AspNetCoreEFCrud.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            // Add custom middleware
-            InitializeContainer(app);
-            /*app.UseMiddleware<CustomMiddleware1>(container);
-            app.UseMiddleware<CustomMiddleware2>(container);*/
-
-            container.Verify();
 
             // ASP.NET default stuff here
             app.UseMvc(routes =>
@@ -106,13 +101,6 @@ namespace AspNetCoreEFCrud.Web
         private void InitializeContainer(IApplicationBuilder app)
         {
             container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
-
-
-            // Add application presentation components:
-            container.RegisterMvcControllers(app);
-            container.RegisterMvcViewComponents(app);
-
-
             //Registrando o contexto
             container.Register<ICafeContext, CafeContext>(Lifestyle.Scoped);
 
@@ -122,6 +110,10 @@ namespace AspNetCoreEFCrud.Web
                 .Where(x => x.GetInterfaces().Any())
                 .ToList()
                 .ForEach(x => container.Register(x.GetInterfaces().Single(), x, Lifestyle.Transient));
+
+            // Add application presentation components:
+            container.RegisterMvcControllers(app);
+            container.RegisterMvcViewComponents(app);
 
             // Allow Simple Injector to resolve services from ASP.NET Core.
             container.AutoCrossWireAspNetComponents(app);

@@ -1,34 +1,37 @@
-﻿using System;
+﻿using AspNetCoreEFCrud.Web.ViewModel;
+using Cafe.Query.Handler;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Cafe.Contract;
-using Cafe.Domain.Mesa;
-using Cafe.Query.Result;
-using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreEFCrud.Web.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Mesas")]
+    [Route("api/Mesa")]
     public class MesaController : Controller
     {
-        readonly IQueryHandler<IEnumerable<MesaAbertaQueryResult>> ObterMesasAtivasQueryHandler;
-
-        public MesaController(IQueryHandler<IEnumerable<MesaAbertaQueryResult>> obterMesasAtivasQueryHandler)
-        {
-            ObterMesasAtivasQueryHandler = obterMesasAtivasQueryHandler;
-        }
 
         [HttpGet("[action]")]
-        public IEnumerable<int> MesasAbertas()
+        public IEnumerable<MesaAbertaViewModel> MesasAbertas()
         {
-            var rng = new Random();
+            using (var mesasAbertas = new MesaAbertaListQueryHandler())
+            {
+                var result = new List<int>();
 
-            var MesasAbertas = ObterMesasAtivasQueryHandler.Handle().Select(i => i.Id);
-
-            return MesasAbertas;
+                return mesasAbertas.Handle().Select(i => new MesaAbertaViewModel
+                {
+                    Id = i.Id,
+                    NumMesa = i.NumMesa,
+                    DataServico = i.DataServico.HasValue ? i.DataServico.Value.ToString("d") : "",
+                    Ativo = i.Ativo,
+                    Garcom = new GarcomViewModel
+                    {
+                        Id = i.Garcom.Id,
+                        Nome = i.Garcom.Nome
+                    },
+                    Pedidos = new List<PedidoViewModel>()
+                }).ToList();
+            }
         }
-
     }
 }

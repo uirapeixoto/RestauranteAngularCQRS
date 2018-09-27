@@ -27,7 +27,6 @@ namespace Cafe.Infra.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-
                 optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=DB_CAFE;Trusted_Connection=True;MultipleActiveResultSets=true");
             }
         }

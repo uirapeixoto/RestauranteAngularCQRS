@@ -9,38 +9,41 @@ using System.Text;
 
 namespace Cafe.Query.Handler
 {
-    public class MesaAbertaListQueryHandler : IQueryHandler<IEnumerable<MesaAbertaQueryResult>>
+    public class MesaAbertaListQueryHandler : IDisposable
     {
-        private ICafeContext _context;
-        public MesaAbertaListQueryHandler(ICafeContext context)
-        {
-            _context = context;
-        }
+       
         public IEnumerable<MesaAbertaQueryResult> Handle()
         {
             try
             {
-                var result = _context.TbTabOpened
-                .Include(p => p.TbOrdered)
-                .Include(g => g.IdWaiterNavigation)
-                .AsNoTracking()
-                .Where(e => e.StActive)
-                .AsParallel()
-                .Select(o => new MesaAbertaQueryResult(
-                    o.Id,
-                    o.NuTable.Value,
-                    new GarcomQueryResult(o.IdWaiterNavigation.Id, o.IdWaiterNavigation.DsName),
-                    null,
-                    o.DtService,
-                    o.StActive
-                    )).ToList();
+                using (var _context = new CafeContext())
+                {
+                    var result = _context.TbTabOpened
+                    .Include(p => p.TbOrdered)
+                    .Include(g => g.IdWaiterNavigation)
+                    .AsNoTracking()
+                    .Where(e => e.StActive)
+                    .AsParallel()
+                    .Select(o => new MesaAbertaQueryResult(
+                        o.Id,
+                        o.NuTable.Value,
+                        new GarcomQueryResult(o.IdWaiterNavigation.Id, o.IdWaiterNavigation.DsName),
+                        null,
+                        o.DtService,
+                        o.StActive
+                        )).ToList();
 
-                return result;
+                    return result;
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        public void Dispose()
+        {
         }
     }
 }

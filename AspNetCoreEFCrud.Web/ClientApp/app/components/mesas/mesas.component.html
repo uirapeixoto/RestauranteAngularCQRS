@@ -1,0 +1,24 @@
+<h1>Gar&ccedil;ons</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+
+<table class='table' *ngIf="mesas">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>No. Mesa</th>
+            <th>Gar&ccedil;on</th>
+            <th>Data Servi&ccedil;o</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mesa of mesas">
+            <td>{{ mesa.id}}</td>
+            <td>{{ mesa.numMesa}}</td>
+            <td>{{ mesa.garcom.nome}}</td>
+            <td>{{ mesa.dataServico}}</td>
+        </tr>
+    </tbody>
+</table>
