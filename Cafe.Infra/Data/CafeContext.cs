@@ -4,6 +4,10 @@ namespace Cafe.Infra.Data
 {
     public partial class CafeContext : DbContext, ICafeContext
     {
+        public CafeContext()
+        {
+        }
+
         public CafeContext(DbContextOptions<CafeContext> options)
             : base(options)
         {
@@ -23,7 +27,8 @@ namespace Cafe.Infra.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server=NBO1340\\SQLEXPRESS;Database=DB_CAFE;Trusted_Connection=True;");
+
+                optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=DB_CAFE;Trusted_Connection=True;MultipleActiveResultSets=true");
             }
         }
 
