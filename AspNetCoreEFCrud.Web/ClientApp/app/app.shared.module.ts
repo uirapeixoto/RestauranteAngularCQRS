@@ -12,6 +12,7 @@ import { CozinhaComponent } from './components/cozinha/cozinha.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { GarconsComponent } from './components/garcons/garcons.component';
 import { MesasComponent } from './components/mesas/mesas.component';
+import { GarcomTarefasComponent } from './components/garcons/garcomTarefas.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { MesasComponent } from './components/mesas/mesas.component';
         CozinhaComponent,
         MesasComponent,
         GarconsComponent,
+        GarcomTarefasComponent,
         HomeComponent
     ],
     imports: [
@@ -35,6 +37,7 @@ import { MesasComponent } from './components/mesas/mesas.component';
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'cozinha', component: CozinhaComponent },
             { path: 'garcons', component: GarconsComponent },
+            { path: 'garcom-tarefas/:id', component: GarcomTarefasComponent },
             { path: 'mesas', component: MesasComponent },
             { path: '**', redirectTo: 'home' }
         ])

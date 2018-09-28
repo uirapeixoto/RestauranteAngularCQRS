@@ -1,13 +1,23 @@
-﻿using System;
+﻿using AspNetCoreEFCrud.Web.Helper;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AspNetCoreEFCrud.Web.ViewModel
 {
-    public class PedidoViewModel
+    public class PedidoViewModel : EnumerableHelper
     {
-        public int Id { get; }
-        public IEnumerable<PedidoItemViewModel> ItensPedidos { get; set; }
+        public int Id { get; set; }
+        public int MesaId { get; set; }
+        public int NumMesa { get; set; }
+        public PedidoItemViewModel PedidoItem { get; set; }
+        public IList<PedidoItemViewModel> PedidoBebidaItens { get; set; }
+        public IList<PedidoItemViewModel> PedidoComidaItens { get; set; }
+        public IList<PedidoItemViewModel> Fatura { get; set; }
+
+        public PedidoViewModel()
+        {
+            PedidoBebidaItens = new List<PedidoItemViewModel>();
+            PedidoComidaItens = new List<PedidoItemViewModel>();
+            Fatura = new List<PedidoItemViewModel>();
+        }
     }
 }
