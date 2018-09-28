@@ -1,0 +1,42 @@
+<h1>Gar&ccedil;ons</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!tarefas"><em>Loading...</em></p>
+
+<table class='table' *ngIf="tarefas">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Menu#
+            </th>
+            <th>
+                Descri&ccedil;&atilde;o
+            </th>
+            <th>
+                Quantidade
+            </th>
+            <th>
+                Observa&ccedil;&atilde;o
+            </th>
+            <th>
+                Pedido
+            </th>
+            <th>Pronto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tarefa of tarefas">
+            <td>{{ tarefa.pedidoItemId}}</td>
+            <td>{{ tarefa.menuItem.id}}</td>
+            <td>{{ tarefa.menuItem.descricao}}</td>
+            <td>{{ tarefa.quantidade}}</td>
+            <td>{{ tarefa.descricao}}</td>
+            <td>{{ tarefa.emPreparacao}}</td>
+            <td>{{ tarefa.marcarComoPronto}}</td>
+        </tr>
+    </tbody>
+</table>
