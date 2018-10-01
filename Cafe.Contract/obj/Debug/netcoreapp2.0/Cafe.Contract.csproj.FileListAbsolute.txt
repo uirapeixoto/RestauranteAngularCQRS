@@ -7,3 +7,12 @@ D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Contract\obj\Debug\ne
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Contract\obj\Debug\netcoreapp2.0\Cafe.Contract.AssemblyInfo.cs
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Contract\obj\Debug\netcoreapp2.0\Cafe.Contract.dll
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Contract\obj\Debug\netcoreapp2.0\Cafe.Contract.pdb
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Contract\bin\Debug\netcoreapp2.0\Cafe.Contract.deps.json
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Contract\bin\Debug\netcoreapp2.0\Cafe.Contract.dll
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Contract\bin\Debug\netcoreapp2.0\Cafe.Contract.pdb
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Contract\obj\Debug\netcoreapp2.0\Cafe.Contract.csprojAssemblyReference.cache
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Contract\obj\Debug\netcoreapp2.0\Cafe.Contract.csproj.CoreCompileInputs.cache
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Contract\obj\Debug\netcoreapp2.0\Cafe.Contract.AssemblyInfoInputs.cache
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Contract\obj\Debug\netcoreapp2.0\Cafe.Contract.AssemblyInfo.cs
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Contract\obj\Debug\netcoreapp2.0\Cafe.Contract.dll
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Contract\obj\Debug\netcoreapp2.0\Cafe.Contract.pdb

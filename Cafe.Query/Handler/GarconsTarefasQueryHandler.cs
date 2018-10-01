@@ -27,6 +27,7 @@ namespace Cafe.Query.Handler
                                  .Where(e => e.StActive)
                                  .Where(g => g.IdWaiter == query.Id)
                                  .Include(p => p.TbOrdered)
+                                 .Include(p => p.TbOrdered)
                                  .Include(p => p.IdWaiterNavigation)
                                  .AsParallel()
                                  .Select(o => new MesaAbertaQueryResult(

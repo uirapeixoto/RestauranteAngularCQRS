@@ -14,7 +14,7 @@
     <tbody>
         <tr *ngFor="let garcon of garcons">
             <td>{{ garcon.id}}</td>
-            <td>{{ garcon.nome}}</td>
+            <td><a [routerLink]="['/garcom-tarefas', garcon.id]" >{{ garcon.nome}}</a></td>
         </tr>
     </tbody>
 </table>

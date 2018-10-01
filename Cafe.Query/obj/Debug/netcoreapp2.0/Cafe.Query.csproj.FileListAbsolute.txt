@@ -12,3 +12,17 @@ D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\bin\Debug\netco
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Contract.pdb
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Infra.pdb
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.csproj.CopyComplete
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Query.deps.json
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Query.dll
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Query.pdb
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Contract.dll
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Infra.dll
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Contract.pdb
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\bin\Debug\netcoreapp2.0\Cafe.Infra.pdb
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.csprojAssemblyReference.cache
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.csproj.CoreCompileInputs.cache
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.AssemblyInfoInputs.cache
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.AssemblyInfo.cs
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.csproj.CopyComplete
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.dll
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Query\obj\Debug\netcoreapp2.0\Cafe.Query.pdb

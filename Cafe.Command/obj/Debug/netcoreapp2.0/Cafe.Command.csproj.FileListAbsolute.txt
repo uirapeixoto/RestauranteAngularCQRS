@@ -7,3 +7,12 @@ D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Command\obj\Debug\net
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.AssemblyInfo.cs
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.dll
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.pdb
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\bin\Debug\netcoreapp2.0\Cafe.Command.deps.json
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\bin\Debug\netcoreapp2.0\Cafe.Command.dll
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\bin\Debug\netcoreapp2.0\Cafe.Command.pdb
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.csprojAssemblyReference.cache
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.csproj.CoreCompileInputs.cache
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.AssemblyInfoInputs.cache
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.AssemblyInfo.cs
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.dll
+F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.pdb

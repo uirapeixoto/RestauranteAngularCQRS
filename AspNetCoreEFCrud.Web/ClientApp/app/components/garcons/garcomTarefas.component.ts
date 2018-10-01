@@ -8,13 +8,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GarcomTarefasComponent {
     public mesas: Mesa[];
+    id: number;
 
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string, private route: ActivatedRoute)
     {
 
-        this.route.params.subscribe(res => console.log(res.id));
+        this.route.params.subscribe(res => this.id = res.id);
 
-        http.get(baseUrl + 'api/garcon/tarefa', ).subscribe(result => {
+        http.get(baseUrl + 'api/garcon/tarefa/' + this.id).subscribe(result => {
             this.mesas = result.json() as Mesa[];
         }, error => console.error(error));
     }
