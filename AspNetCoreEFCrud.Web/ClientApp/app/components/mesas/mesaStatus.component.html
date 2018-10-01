@@ -1,0 +1,133 @@
+<h3>Pedidos para a mesa {{ mesaStatus.Id }}</h3>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel with-nav-tabs panel-default">
+            <div class="panel-heading">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1default" data-toggle="tab">Servir</a></li>
+                    <li><a href="#tab2default" data-toggle="tab">Cozinha</a></li>
+                    <li><a href="#tab3default" data-toggle="tab">Servidos</a></li>
+                </ul>
+            </div>
+            <div class="panel-body">
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tab1default">
+                        <form action="/" method="post" *ngIf="mesaStatus.pedidosAServir">
+                            <input type="hidden" name="mesaStaus.mesaId" value="{{ mesaStatus.mesaId }}" />
+                            <input type="hidden" name="mesaStaus.numMesa" value="{{ mesaStatus.numMesa }}" />
+                            <h4>Bebidas</h4>
+
+                            <p *ngIf="!mesaStatus.pedidosAServir"><em>Loading...</em></p>
+
+                            <table class="table" *ngIf="mesaStatus.pedidosAServir">
+                                <thead>
+                                    <tr>
+                                        <th>Menu #</th>
+                                        <th>Descri&ccedil;&atilde;o</th>
+                                        <th class="text-center">Quantidade</th>
+                                        <th class="text-center">Quando</th>
+                                        <th class="text-center"><i class=" glyphicon glyphicon-check"></i> Marcar como servido</th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    <tr *ngFor="let aServir of mesaStatus.pedidosAServir">
+                                        <td>{{ aServir.menuItem.numMenuItem }}</td>
+                                        <td>{{ aServir.menuItem.descricao }}</td>
+                                        <td class="text-center">{{ aServir.quantidade }}</td>
+                                        <td class="text-center">{{ aServir.aServir }}</td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="checkbox form-control" name="mesaStatus.pdidoAServir[{{ aServir.id }}].MarcarComoServido" value="" />
+                                            <input type="hidden" name="mesaStatus.pdidoAServir[{{ aServir.id }}].Id" value="{{ aServir.id }}" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button type="submit" class="btn btn-primary ">Marcar Como Servido</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="tab2default">
+                        <form action="/" method="post" *ngIf="mesaStatus.pedidosEmPreparacao">
+                            <input type="hidden" name="mesaStaus.mesaId" value="{{ mesaStatus.mesaId }}" />
+                            <input type="hidden" name="mesaStaus.numMesa" value="{{ mesaStatus.numMesa }}" />
+                            <h4>Bebidas</h4>
+                            
+                            <p *ngIf="!mesaStatus.pedidosEmPreparacao"><em>Loading...</em></p>
+                            
+                            <table class="table" *ngIf="mesaStatus.pedidosEmPreparacao">
+                                <thead>
+                                    <tr>
+                                        <th>Menu #</th>
+                                        <th>Descri&ccedil;&atilde;o</th>
+                                        <th class="text-center">Quantidade</th>
+                                        <th class="text-center">Quando</th>
+                                        <th class="text-center"><i class=" glyphicon glyphicon-check"></i> Marcar como servido</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let emPreparacao of mesaStatus.pedidosEmPreparacao">
+                                        <td>{{ emPreparacao.menuItem.numMenuItem }}</td>
+                                        <td>{{ emPreparacao.menuItem.descricao }}</td>
+                                        <td class="text-center">{{ emPreparacao.quantidade }}</td>
+                                        <td class="text-center">{{ emPreparacao.servido }}</td>
+                                        <td class="text-center">
+                                            <input type="checkbox" class="checkbox form-control" name="mesaStatus.pdidoAServir[{{ emPreparacao.id }}].MarcarComoServido" value="" />
+                                            <input type="hidden" name="mesaStatus.pdidoAServir[{{ emPreparacao.id }}].Id" value="{{ emPreparacao.id }}" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button type="submit" class="btn btn-primary ">Marcar Como Servido</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="tab3default">
+                        <h4>Itens Já Servidos</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Menu #</th>
+                                    <th>Description</th>
+                                    <th class="text-center">Quando</th>
+                                    <th class="text-center">Quantidade</th>
+                                    <th class="text-center">Preço</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let servidos of mesaStatus.pedidosServidos">
+                                    <td>{{ servidos.menuItem.numMenuItem }}</td>
+                                    <td>{{ servidos.menuItem.descricao }}</td>
+                                    <td class="text-center">{{ servidos.servido }}</td>
+                                    <td class="text-center">{{ servidos.quantidade }}</td>
+                                    <td>{{ servidos.menuItem.valor * servidos.menuItem.quantidade }}</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="text-center"><b>SubTotal</b></td>
+                                    <td class="text-center">
+                                        calcular a soma dos valores
+                                    </td>
+                                    <td class="text-center">
+                                        <b>@subTotal</b>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="right" style="float:right">
+                            <i class="icon-remove"></i>
+                            <a href="#" class="btn btn-default">Fechar Mesa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+    <div class="left" style="float:left">
+        <i class="icon-plus"></i>
+        <input type="text" name="Adicionar Pedidos" class="btn btn-default" value="" />
+        <a href="#" class="btn btn-default">Adicionar Pedidos</a>
+    </div>
+</div>

@@ -4,20 +4,12 @@
 
 <p *ngIf="!garcons"><em>Loading...</em></p>
 
-<table class='table' *ngIf="garcons">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let garcon of garcons">
-            <td>{{ garcon.id}}</td>
-            <td><a [routerLink]="['/garcom-tarefas', garcon.id]" >{{ garcon.nome}}</a></td>
-        </tr>
-    </tbody>
-</table>
-<div *ngFor="let garcon of garcons">
-    <a class="btn btn-lg btn-default" (click)="VerTarefas(garcon.id)" >{{garcon.nome}}</a>
+<div class="row col-lg-12">
+    <a class="btn btn-lg btn-default" *ngFor="let garcon of garcons" [routerLink]="['/garcom-tarefas', garcon.id]">
+        <div class="col-lg-2">
+            <div class="right small text-left"><small>Tarefas</small></div>
+            <div class="left input-lg text-capitalize"><b>{{ garcon.nome}}</b></div>
+            <div class="small text-center"><small>{{date | date:'dd/MM'}}</small></div>
+        </div>
+    </a>
 </div>

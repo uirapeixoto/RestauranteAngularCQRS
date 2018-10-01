@@ -12,6 +12,7 @@ import { CozinhaComponent } from './components/cozinha/cozinha.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { GarconsComponent } from './components/garcons/garcons.component';
 import { MesasComponent } from './components/mesas/mesas.component';
+import { MesaStatusComponent } from './components/mesas/mesaStatus.component';
 import { GarcomTarefasComponent } from './components/garcons/garcomTarefas.component';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { GarcomTarefasComponent } from './components/garcons/garcomTarefas.compo
         FetchDataComponent,
         CozinhaComponent,
         MesasComponent,
+        MesaStatusComponent,
         GarconsComponent,
         GarcomTarefasComponent,
         HomeComponent
@@ -39,6 +41,7 @@ import { GarcomTarefasComponent } from './components/garcons/garcomTarefas.compo
             { path: 'garcons', component: GarconsComponent },
             { path: 'garcom-tarefas/:id', component: GarcomTarefasComponent },
             { path: 'mesas', component: MesasComponent },
+            { path: 'mesa-status/:id', component: MesaStatusComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

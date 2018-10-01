@@ -8,9 +8,9 @@ namespace AspNetCoreEFCrud.Web.ViewModel
         public string Descricao { get; set; }
         public int Quantidade { get; set; }
         public decimal AjustePreco { get; set; }
-        public DateTime? AServir { get; set; }
-        public DateTime? EmPreparacao { get; set; }
-        public DateTime? Servido { get; set; }
+        public string AServir { get; set; }
+        public string EmPreparacao { get; set; }
+        public string Servido { get; set; }
         public MenuItemViewModel MenuItem { get; set; }
     }
 }

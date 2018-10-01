@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GarconsComponent {
     public garcons: Garcom[];
-
+    public date = new Date();
     id: number;
     public mesas: Mesa[];
     baseUrl: string;

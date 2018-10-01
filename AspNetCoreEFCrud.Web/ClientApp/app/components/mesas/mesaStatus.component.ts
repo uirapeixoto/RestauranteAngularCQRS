@@ -3,11 +3,11 @@ import { Http } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'garcomTarefas',
-    templateUrl: './garcomTarefas.component.html'
+    selector: 'mesaStatus',
+    templateUrl: './mesaStatus.component.html'
 })
-export class GarcomTarefasComponent {
-    public mesas: Mesa[];
+export class MesaStatusComponent {
+    public mesaStatus: MesaStatus;
     id: number;
 
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string, private route: ActivatedRoute)
@@ -15,35 +15,18 @@ export class GarcomTarefasComponent {
 
         this.route.params.subscribe(res => this.id = res.id);
 
-        http.get(baseUrl + 'api/garcon/tarefa/' + this.id).subscribe(result => {
-            this.mesas = result.json() as Mesa[];
+        http.get(baseUrl + 'api/mesa/status/' + this.id).subscribe(result => {
+            this.mesaStatus = result.json() as MesaStatus;
         }, error => console.error(error));
     }
 }
 
-interface Mesa {
-    id: number;
-    numMesa: number;
-    garcom: Garcom;
-    dataServico: string;
-    pedidos: Pedido[];
-    ativo: boolean;
-}
-
-interface Garcom
-{
-    id: number;
-    nome: string;
-}
-
-interface Pedido
-{
-    id: number;
+interface MesaStatus {
     mesaId: number;
     numMesa: number;
-    pedidoItem: PedidoItem;
-    pedidoBebidaItens: PedidoItem[];
-    pedidoComidaItens: PedidoItem[]; 
+    pedidosAServir: PedidoItem;
+    pedidosEmPreparacao: PedidoItem;
+    pedidosServidos: PedidoItem;
 }
 
 interface PedidoItem {

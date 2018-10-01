@@ -8,7 +8,6 @@ D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\obj\Debug\netco
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\obj\Debug\netcoreapp2.0\Cafe.Infra.pdb
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\bin\Debug\netcoreapp2.0\Cafe.Infra.runtimeconfig.json
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\bin\Debug\netcoreapp2.0\Cafe.Infra.runtimeconfig.dev.json
-D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\obj\Debug\netcoreapp2.0\Cafe.Infra.csprojResolveAssemblyReference.cache
 F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Infra\bin\Debug\netcoreapp2.0\Cafe.Infra.deps.json
 F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Infra\bin\Debug\netcoreapp2.0\Cafe.Infra.runtimeconfig.json
 F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Infra\bin\Debug\netcoreapp2.0\Cafe.Infra.runtimeconfig.dev.json

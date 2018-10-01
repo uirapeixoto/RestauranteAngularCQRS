@@ -664,30 +664,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Desenvolvedor\\.nuget\\packages\\": {},
+    "C:\\Users\\uira.oliveira\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\desenvolvimento\\dotNet\\RestauranteAngularCQRS\\Cafe.Contract\\Cafe.Contract.csproj",
+      "projectUniqueName": "D:\\Pessoais\\codigos\\AspNetCoreEFCrud\\AspNetCoreEFCrud\\Cafe.Contract\\Cafe.Contract.csproj",
       "projectName": "Cafe.Contract",
-      "projectPath": "F:\\desenvolvimento\\dotNet\\RestauranteAngularCQRS\\Cafe.Contract\\Cafe.Contract.csproj",
-      "packagesPath": "C:\\Users\\Desenvolvedor\\.nuget\\packages\\",
-      "outputPath": "F:\\desenvolvimento\\dotNet\\RestauranteAngularCQRS\\Cafe.Contract\\obj\\",
+      "projectPath": "D:\\Pessoais\\codigos\\AspNetCoreEFCrud\\AspNetCoreEFCrud\\Cafe.Contract\\Cafe.Contract.csproj",
+      "packagesPath": "C:\\Users\\uira.oliveira\\.nuget\\packages\\",
+      "outputPath": "D:\\Pessoais\\codigos\\AspNetCoreEFCrud\\AspNetCoreEFCrud\\Cafe.Contract\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Desenvolvedor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\uira.oliveira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
-        "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://nuget.compline.com.br/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

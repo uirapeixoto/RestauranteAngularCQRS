@@ -1,21 +1,131 @@
-<h1>Tarefas de Lena</h1>
-<p *ngIf="!mesas"><em>Loading...</em></p>
+<style rel="stylesheet">
+    ul.none {
+        list-style-type: none;
+    }
 
-<table class='table' *ngIf="mesas">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>No. Mesa</th>
-            <th>Gar&ccedil;on</th>
-            <th>Data Servi&ccedil;o</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let mesa of mesas">
-            <td>{{ mesa.id}}</td>
-            <td>{{ mesa.numMesa}}</td>
-            <td>{{ mesa.garcom.nome}}</td>
-            <td>{{ mesa.dataServico}}</td>
-        </tr>
-    </tbody>
-</table>
+    ul.disc {
+        list-style-type: disc;
+    }
+
+    ul.circle {
+        list-style-type: circle;
+    }
+
+    ul.square {
+        list-style-type: square;
+    }
+
+    .caption-small {
+        font: small-caption
+    }
+</style>
+
+<h3>Tarefas de </h3>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel with-nav-tabs panel-default">
+            <div class="panel-heading">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1default" data-toggle="tab">Bebidas</a></li>
+                    <li><a href="#tab2default" data-toggle="tab">Refei&ccedil;&otilde;es</a></li>
+                </ul>
+            </div>
+            <div class="panel-body">
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tab1default">
+                        <div class="row">
+                            <div class="row" id="subtitulo">
+                                <div class="col-lg-2 text-center"><b>Mesas</b></div>
+                                <div class="col-lg-10 text-center">
+                                    <div class="col-md-2">
+                                        <b>Menu#</b>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <b>Descri&ccedil;&atilde;o</b>
+                                    </div>
+                                    <div class="col-md-2 text-center">
+                                        <b>Quant</b>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <b>Data Pedido</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row" id="dados" *ngFor="let mesa of mesas">
+                                <div class="col-lg-2 left text-center">
+                                    <b>
+                                        <a class="btn btn-default" href="/Restaurante/Mesa/Status/{{ mesa.numMesa }}">Mesa {{ mesa.numMesa }}</a>
+                                    </b>
+                                </div>
+                                <div class="col-lg-10 right" *ngFor="let pedidos of mesa.pedidos">
+                                    <div class="row" *ngFor="let bebida of pedidos.pedidoBebidaItens">
+                                        <div class="col-md-2 text-center">
+                                            {{bebida.menuItem.numMenuItem}}
+                                        </div>
+                                        <div class="col-md-4">
+                                            {{bebida.menuItem.descricao}}
+                                        </div>
+                                        <div class="col-md-2 text-center">
+                                            {{bebida.quantidade}}
+                                        </div>
+                                        <div class="col-md-4">
+                                            {{bebida.aServir}}
+                                        </div>
+                                    </div>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab2default">
+                        <div class="row table">
+                            <div class="row" id="subtitulo">
+                                <div class="col-lg-2 text-center"><b>Mesas</b></div>
+                                <div class="col-lg-10 text-center">
+                                    <div class="col-md-2">
+                                        <b>Menu#</b>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <b>Descri&ccedil;&atilde;o</b>
+                                    </div>
+                                    <div class="col-md-2 text-center">
+                                        <b>Quant</b>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <b>Data Pedido</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row" id="dados" *ngFor="let mesa of mesas">
+                                <div class="col-lg-2 left text-center">
+                                    <b>
+                                        <a class="btn btn-default" href="/Restaurante/Mesa/Status/{{ mesa.numMesa }}">Mesa {{ mesa.numMesa }}</a>
+                                    </b>
+                                </div>
+                                <div class="col-lg-10 right" *ngFor="let pedidos of mesa.pedidos">
+                                    <div class="row" *ngFor="let comida of pedidos.pedidoComidaItens">
+                                        <div class="col-md-2 text-center">
+                                            {{comida.menuItem.numMenuItem}}
+                                        </div>
+                                        <div class="col-md-4">
+                                            {{comida.menuItem.descricao}}
+                                        </div>
+                                        <div class="col-md-2 text-center">
+                                            {{comida.quantidade}}
+                                        </div>
+                                        <div class="col-md-4">
+                                            {{comida.aServir}}
+                                        </div>
+                                    </div>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
