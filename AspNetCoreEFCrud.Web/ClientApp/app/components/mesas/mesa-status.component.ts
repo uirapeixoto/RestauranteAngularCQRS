@@ -3,8 +3,8 @@ import { Http } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'mesaStatus',
-    templateUrl: './mesaStatus.component.html'
+    selector: 'mesa-status',
+    templateUrl: './mesa-status.component.html'
 })
 export class MesaStatusComponent {
     public mesaStatus: MesaStatus;

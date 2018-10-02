@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { Http } from '@angular/http';
+import { MesaAbrirFormComponent } from './mesa-abrir-form.component';
 
 @Component({
     selector: 'mesas',
