@@ -1,7 +1,5 @@
 <h3>Tarefas da cozinha</h3>
 
-<p>This component demonstrates fetching data from the server.</p>
-
 <p *ngIf="!tarefas"><em>Loading...</em></p>
 
 <div class="row">
@@ -41,15 +39,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let tarefa of tarefas">
-                                    <td><input name="[{{ tarefa.pedidoItemId }}].PedidoItemId" type="hidden" value="{{ tarefa.pedidoItemId}}" />{{ tarefa.pedidoItemId }}</td>
-                                    <td>{{ tarefa.menuItem.id}}</td>
-                                    <td>{{ tarefa.menuItem.descricao}}</td>
-                                    <td>{{ tarefa.quantidade}}</td>
-                                    <td>{{ tarefa.descricao}}</td>
-                                    <td>{{ tarefa.emPreparacao}}</td>
+                                <tr *ngFor="let pendente of tarefas.tarefasPendente">
+                                    <td><input name="[{{ pendente.pedidoItemId }}].PedidoItemId" type="hidden" value="{{ pendente.pedidoItemId}}" />{{ pendente.pedidoItemId }}</td>
+                                    <td>{{ pendente.menuItem.id}}</td>
+                                    <td>{{ pendente.menuItem.descricao}}</td>
+                                    <td>{{ pendente.quantidade}}</td>
+                                    <td>{{ pendente.descricao}}</td>
+                                    <td>{{ pendente.emPreparacao}}</td>
                                     <td class="text-center">
-                                        <input type="checkbox" name="MarcarComoPronto" class="checkbox form-control" value="{{ tarefa.marcarComoPronto}}" />
+                                        <input type="checkbox" name="MarcarComoPronto" class="checkbox form-control" value="{{ pendente.marcarComoPronto}}" />
                                     </td>
                                 </tr>
                             </tbody>
@@ -75,14 +73,14 @@
                                     <th>Servido</th>
                                 </tr>
                             </thead>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                </tr>
+                            <tr *ngFor="let pronto of tarefas.tarefasPronta">
+                                <td><input name="[{{ pronto.pedidoItemId }}].PedidoItemId" type="hidden" value="{{ pronto.pedidoItemId}}" />{{ pronto.pedidoItemId }}</td>
+                                <td>{{ pronto.menuItem.id}}</td>
+                                <td>{{ pronto.menuItem.descricao}}</td>
+                                <td>{{ pronto.quantidade}}</td>
+                                <td>{{ pronto.descricao}}</td>
+                                <td>{{ pronto.emPreparacao}}</td>
+                            </tr>
                         </table>
                     </div>
                 </div>

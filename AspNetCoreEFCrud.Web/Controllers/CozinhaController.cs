@@ -12,12 +12,12 @@ namespace AspNetCoreEFCrud.Web.Controllers
     public class CozinhaController : Controller
     {
         [HttpGet("[action]")]
-        public IEnumerable<CozinhaTarefasViewModel> Listar()
+        public CozinhaTarefasViewModel Listar()
         {
             using (var cozinhaTarefas = new CozinhaTarefasQueryHandler())
             {
                 var result = cozinhaTarefas.Handle(new CozinhaTarefasQuery(0))
-                    .Select(o => new CozinhaTarefasViewModel
+                    .Select(o => new CozinhaViewModel
                     {
                         PedidoItemId = o.PedidoItemId,
                         MesaId = o.MesaId,
@@ -37,13 +37,13 @@ namespace AspNetCoreEFCrud.Web.Controllers
                         Servido = o.Servido.HasValue ? o.Servido.Value.ToString("d") : ""
                     }).ToList();
 
-                var _refeicoesProntas = result
-                    .Where(x => !string.IsNullOrEmpty(x.AServir))
-                    .OrderBy(o => o.PedidoItemId).ToList();
-
-                ViewBag.RefeicoesProntas = _refeicoesProntas.Count() > 0 ? _refeicoesProntas : new List<CozinhaTarefasViewModel>();
-
-                return result.Where(x => string.IsNullOrEmpty(x.AServir)).ToList();
+                var tarefas = new CozinhaTarefasViewModel
+                {
+                    TarefasPendente = result.Where(x => string.IsNullOrEmpty(x.AServir)).OrderBy(o => o.PedidoItemId).ToList(),
+                    TarefasPronta = result.Where(x => !string.IsNullOrEmpty(x.AServir)).ToList()
+                };
+                
+                return tarefas;
             }
         }
     }

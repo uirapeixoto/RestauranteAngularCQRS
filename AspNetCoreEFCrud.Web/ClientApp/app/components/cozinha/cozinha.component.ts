@@ -6,13 +6,19 @@ import { Http } from '@angular/http';
     templateUrl: './cozinha.component.html'
 })
 export class CozinhaComponent {
-    public tarefas: Cozinha[];
+    public tarefas: Tarefas;
 
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
         http.get(baseUrl + 'api/cozinha/listar').subscribe(result => {
-            this.tarefas = result.json() as Cozinha[];
+            this.tarefas = result.json() as Tarefas;
         }, error => console.error(error));
     }
+}
+
+interface Tarefas
+{
+    tarefasPendente: Cozinha[];
+    tarefasPronta: Cozinha[];
 }
 
 interface Cozinha {
