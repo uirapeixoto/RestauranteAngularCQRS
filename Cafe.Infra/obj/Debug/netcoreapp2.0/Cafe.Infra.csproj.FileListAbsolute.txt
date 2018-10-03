@@ -19,3 +19,4 @@ F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Infra\obj\Debug\netcoreapp
 F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Infra\obj\Debug\netcoreapp2.0\Cafe.Infra.AssemblyInfo.cs
 F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Infra\obj\Debug\netcoreapp2.0\Cafe.Infra.dll
 F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Infra\obj\Debug\netcoreapp2.0\Cafe.Infra.pdb
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Infra\obj\Debug\netcoreapp2.0\Cafe.Infra.csprojResolveAssemblyReference.cache

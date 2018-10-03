@@ -59,6 +59,7 @@ namespace AspNetCoreEFCrud.Web.Controllers
                         },
                         Descricao = i.Descricao,
                         Quantidade = i.Quantidade,
+                        Valor = (i.Quantidade * (double) i.MenuItem.Valor),
                         AServir = i.AServir.HasValue ? i.AServir.Value.ToString("d") : "",
                         EmPreparacao = i.EmPreparacao.HasValue ? i.EmPreparacao.Value.ToString("d") : "",
                         Servido = i.Servido.HasValue ? i.Servido.Value.ToString("d") : ""
@@ -97,6 +98,22 @@ namespace AspNetCoreEFCrud.Web.Controllers
 
                 return mesaStatus;
             }
+        }
+
+        [HttpPost("[action]")]
+        public void AbrirNovaMesa([FromBody]MesaNovaViewModel value)
+        {
+            try
+            {
+
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+            var result = value;
+
         }
     }
 }

@@ -36,61 +36,67 @@ namespace AspNetCoreEFCrud.Web.Controllers
 
         }
         [HttpGet("[action]/{id}")]
-        public IEnumerable<MesaAbertaViewModel> Tarefa(int id)
+        public GarcomTarefasViewModel Tarefa(int id)
         {
             try
             {
-                using (var garconTarefas = new GarconsTarefasQueryHandler())
+                using (var garconTarefas = new GarcomTarefasQueryHandler())
                 {
-                    return garconTarefas.Handle(new GarconsTarefasQuery(id))
-                                .Select(x => new MesaAbertaViewModel
+                    var rs = garconTarefas.Handle(new GarconsTarefasQuery(id));
+
+                    return new GarcomTarefasViewModel
+                    {
+                        Id = rs.Id,
+                        Nome = rs.Nome,
+                        Mesas = rs.Mesas.Select(x => new MesaAbertaViewModel
+                        {
+                            Id = x.Id,
+                            NumMesa = x.NumMesa,
+                            Garcom = new GarcomViewModel
+                            {
+                                Id = x.Garcom.Id,
+                                Nome = x.Garcom.Nome
+                            },
+                            DataServico = x.DataServico.HasValue ? x.DataServico.Value.ToString("d") : "",
+                            Pedidos = x.Pedidos.Select(p => new PedidoViewModel
+                            {
+                                Id = p.Id,
+                                PedidoBebidaItens = p.ItensPedidos.Where(f => f.MenuItem.Bebida).Select(i => new PedidoItemViewModel
                                 {
-                                    Id = x.Id,
-                                    NumMesa = x.NumMesa,
-                                    Garcom = new GarcomViewModel
+                                    Id = i.Id,
+                                    MenuItem = new MenuItemViewModel
                                     {
-                                        Id = x.Garcom.Id,
-                                        Nome = x.Garcom.Nome
+                                        Id = i.MenuItem.Id,
+                                        NumMenuItem = i.MenuItem.NumMenuItem,
+                                        Descricao = i.MenuItem.Descricao,
+                                        Ativo = i.MenuItem.Ativo
                                     },
-                                    DataServico = x.DataServico.HasValue ? x.DataServico.Value.ToString("d") : "",
-                                    Pedidos = x.Pedidos.Select(p => new PedidoViewModel
+                                    AServir = i.AServir.HasValue ? i.AServir.Value.ToString("d") : "",
+                                    EmPreparacao = i.EmPreparacao.HasValue ? i.EmPreparacao.Value.ToString("d") : "",
+                                    Servido = i.Servido.HasValue ? i.Servido.Value.ToString("d") : "",
+                                    Quantidade = i.Quantidade,
+                                    Descricao = i.Descricao,
+                                }).ToList(),
+                                PedidoComidaItens = p.ItensPedidos.Where(f => !f.MenuItem.Bebida).Select(i => new PedidoItemViewModel
+                                {
+                                    Id = i.Id,
+                                    MenuItem = new MenuItemViewModel
                                     {
-                                        Id = p.Id,
-                                        PedidoBebidaItens = p.ItensPedidos.Where(f => f.MenuItem.Bebida).Select(i => new PedidoItemViewModel
-                                        {
-                                            Id = i.Id,
-                                            MenuItem = new MenuItemViewModel
-                                            {
-                                                Id = i.MenuItem.Id,
-                                                NumMenuItem = i.MenuItem.NumMenuItem,
-                                                Descricao = i.MenuItem.Descricao,
-                                                Ativo = i.MenuItem.Ativo
-                                            },
-                                            AServir = i.AServir.HasValue ? i.AServir.Value.ToString("d") : "",
-                                            EmPreparacao = i.EmPreparacao.HasValue ? i.EmPreparacao.Value.ToString("d") : "",
-                                            Servido = i.Servido.HasValue ? i.Servido.Value.ToString("d") : "",
-                                            Quantidade = i.Quantidade,
-                                            Descricao = i.Descricao,
-                                        }).ToList(),
-                                        PedidoComidaItens = p.ItensPedidos.Where(f => !f.MenuItem.Bebida).Select(i => new PedidoItemViewModel
-                                        {
-                                            Id = i.Id,
-                                            MenuItem = new MenuItemViewModel
-                                            {
-                                                Id = i.MenuItem.Id,
-                                                NumMenuItem = i.MenuItem.NumMenuItem,
-                                                Descricao = i.MenuItem.Descricao,
-                                                Ativo = i.MenuItem.Ativo
-                                            },
-                                            AServir = i.AServir.HasValue ? i.AServir.Value.ToString("d") : "",
-                                            EmPreparacao = i.EmPreparacao.HasValue ? i.EmPreparacao.Value.ToString("d") : "",
-                                            Servido = i.Servido.HasValue ? i.Servido.Value.ToString("d") : "",
-                                            Quantidade = i.Quantidade,
-                                            Descricao = i.Descricao,
-                                        }).ToList(),
-                                    }),
-                                    Ativo = x.Ativo
-                                });
+                                        Id = i.MenuItem.Id,
+                                        NumMenuItem = i.MenuItem.NumMenuItem,
+                                        Descricao = i.MenuItem.Descricao,
+                                        Ativo = i.MenuItem.Ativo
+                                    },
+                                    AServir = i.AServir.HasValue ? i.AServir.Value.ToString("d") : "",
+                                    EmPreparacao = i.EmPreparacao.HasValue ? i.EmPreparacao.Value.ToString("d") : "",
+                                    Servido = i.Servido.HasValue ? i.Servido.Value.ToString("d") : "",
+                                    Quantidade = i.Quantidade,
+                                    Descricao = i.Descricao,
+                                }).ToList(),
+                            }),
+                            Ativo = x.Ativo
+                        }).ToList()
+                    };
                 }
             }
             catch (Exception ex)

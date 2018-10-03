@@ -28,6 +28,7 @@ interface Cozinha {
     pedidoId: number;
     descricao: string;
     quantidade: number;
+    valor: number;
     ajustePrco: number;
     aServir: string;
     emPreparacao: string;

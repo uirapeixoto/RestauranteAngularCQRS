@@ -1,5 +1,5 @@
-<h3>Pedidos para a mesa {{ mesaStatus.Id }}</h3>
-
+<h3>Pedidos para a mesa {{ mesaStatus.numMesa }}</h3>
+<p *ngIf="!mesaStatus"><em>Loading...</em></p>
 <div class="row">
     <div class="col-md-12">
         <div class="panel with-nav-tabs panel-default">
@@ -13,12 +13,10 @@
             <div class="panel-body">
                 <div class="tab-content">
                     <div class="tab-pane fade in active" id="tab1default">
-                        <form action="/" method="post" *ngIf="mesaStatus.pedidosAServir">
+                        <form action="/" method="post">
                             <input type="hidden" name="mesaStaus.mesaId" value="{{ mesaStatus.mesaId }}" />
                             <input type="hidden" name="mesaStaus.numMesa" value="{{ mesaStatus.numMesa }}" />
                             <h4>Bebidas</h4>
-
-                            <p *ngIf="!mesaStatus.pedidosAServir"><em>Loading...</em></p>
 
                             <table class="table" *ngIf="mesaStatus.pedidosAServir">
                                 <thead>
@@ -98,7 +96,7 @@
                                     <td>{{ servidos.menuItem.descricao }}</td>
                                     <td class="text-center">{{ servidos.servido }}</td>
                                     <td class="text-center">{{ servidos.quantidade }}</td>
-                                    <td class="text-center">{{ servidos.menuItem.valor }}</td>
+                                    <td class="text-center">{{ servidos.valor }}</td>
                                 </tr>
                                 <tr>
                                     <td></td>

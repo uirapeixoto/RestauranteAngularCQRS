@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
     templateUrl: './garcomTarefas.component.html'
 })
 export class GarcomTarefasComponent {
-    public mesas: Mesa[];
+    public garcom: Garcom;
     id: number;
 
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string, private route: ActivatedRoute)
@@ -16,7 +16,7 @@ export class GarcomTarefasComponent {
         this.route.params.subscribe(res => this.id = res.id);
 
         http.get(baseUrl + 'api/garcon/tarefa/' + this.id).subscribe(result => {
-            this.mesas = result.json() as Mesa[];
+            this.garcom = result.json() as Garcom;
         }, error => console.error(error));
     }
 }
@@ -34,6 +34,7 @@ interface Garcom
 {
     id: number;
     nome: string;
+    mesas: Mesa[];
 }
 
 interface Pedido

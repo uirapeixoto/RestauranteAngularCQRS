@@ -9,7 +9,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label" for="numMesa">No. da Mesa</label>
                             <div class="col-md-8">
-                                <select id="mesa.numMesa" class="form-control">
+                                <select id="mesa.numMesa" name="mesa.numMesa" class="form-control">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -37,7 +37,7 @@
                             <label class="col-md-3 control-label" for="mesa.garcom.id">Gar&ccedil;om</label>
                             <div class="col-md-8">
                                 <p *ngIf="!garcons"><em>Loading...</em></p>
-                                <select class="form-control">
+                                <select class="form-control" id="mesa.garcom.id" name="mesa.garcom">
                                     <option  *ngFor="let garcom of garcons" value="{{garcom.id}}">{{garcom.nome}}</option>
                                 </select>
                             </div>

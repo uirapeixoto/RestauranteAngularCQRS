@@ -2,6 +2,7 @@
 using Cafe.Query.Handler;
 using Cafe.Query.Query;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -31,6 +32,7 @@ namespace AspNetCoreEFCrud.Web.Controllers
                             Ativo = o.MenuItem.Ativo
                         },
                         Quantidade = o.Quantidade,
+                        Valor = (o.Quantidade * (double) o.MenuItem.Valor),
                         Descricao = o.Descricao,
                         AServir = o.AServir.HasValue ? o.AServir.Value.ToString("d") : "",
                         EmPreparacao = o.EmPreparacao.HasValue ? o.EmPreparacao.Value.ToString("d") : "",

@@ -16,3 +16,8 @@ F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\obj\Debug\netcorea
 F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.AssemblyInfo.cs
 F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.dll
 F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.pdb
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Command\bin\Debug\netcoreapp2.0\Cafe.Contract.dll
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Command\bin\Debug\netcoreapp2.0\Cafe.Infra.dll
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Command\bin\Debug\netcoreapp2.0\Cafe.Contract.pdb
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Command\bin\Debug\netcoreapp2.0\Cafe.Infra.pdb
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Command\obj\Debug\netcoreapp2.0\Cafe.Command.csproj.CopyComplete

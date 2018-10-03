@@ -1,7 +1,6 @@
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Domain\bin\Debug\netcoreapp2.0\Cafe.Domain.deps.json
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Domain\bin\Debug\netcoreapp2.0\Cafe.Domain.dll
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Domain\bin\Debug\netcoreapp2.0\Cafe.Domain.pdb
-D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Domain\obj\Debug\netcoreapp2.0\Cafe.Domain.csprojResolveAssemblyReference.cache
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Domain\obj\Debug\netcoreapp2.0\Cafe.Domain.csproj.CoreCompileInputs.cache
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Domain\obj\Debug\netcoreapp2.0\Cafe.Domain.AssemblyInfoInputs.cache
 D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Domain\obj\Debug\netcoreapp2.0\Cafe.Domain.AssemblyInfo.cs
@@ -16,3 +15,4 @@ F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Domain\obj\Debug\netcoreap
 F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Domain\obj\Debug\netcoreapp2.0\Cafe.Domain.AssemblyInfo.cs
 F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Domain\obj\Debug\netcoreapp2.0\Cafe.Domain.dll
 F:\desenvolvimento\dotNet\RestauranteAngularCQRS\Cafe.Domain\obj\Debug\netcoreapp2.0\Cafe.Domain.pdb
+D:\Pessoais\codigos\AspNetCoreEFCrud\AspNetCoreEFCrud\Cafe.Domain\obj\Debug\netcoreapp2.0\Cafe.Domain.csprojResolveAssemblyReference.cache
