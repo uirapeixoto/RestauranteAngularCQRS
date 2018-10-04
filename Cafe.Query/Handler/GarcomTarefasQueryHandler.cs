@@ -4,6 +4,7 @@ using Cafe.Query.Result;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Cafe.Query.Handler
 {
@@ -71,5 +72,6 @@ namespace Cafe.Query.Handler
 
 
         }
+        
     }
 }

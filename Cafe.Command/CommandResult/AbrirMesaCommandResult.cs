@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cafe.Command.CommandResult
 {
-    public class AbrirMesaCommandResult
+    public class AbrirNovaMesaCommandResult
     {
         public int Id { get; }
         public int NumMesa { get; }
@@ -12,7 +12,7 @@ namespace Cafe.Command.CommandResult
         public bool Ativo { get; }
         public DateTime DataServico { get; }
 
-        public AbrirMesaCommandResult(int id, int numMesa, int garcomId, bool ativo, DateTime DataServio)
+        public AbrirNovaMesaCommandResult(int id, int numMesa, int garcomId, bool ativo, DateTime DataServio)
         {
             Id = id;
             NumMesa = numMesa;

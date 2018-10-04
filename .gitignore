@@ -34,3 +34,6 @@ Cafe.AppConsole/obj/project.assets.json
 Cafe.AppConsole/obj/Cafe.AppConsole.csproj.nuget.g.props
 Cafe.AppConsole/obj/Cafe.AppConsole.csproj.nuget.cache
 Cafe.Query/obj/project.assets.json
+Cafe.Contract/obj/Debug/netcoreapp2.0/Cafe.Contract.csprojResolveAssemblyReference.cache
+Cafe.Command/obj/Debug/netcoreapp2.0/Cafe.Command.csprojResolveAssemblyReference.cache
+Cafe.Domain/obj/Debug/netcoreapp2.0/Cafe.Domain.csprojResolveAssemblyReference.cache

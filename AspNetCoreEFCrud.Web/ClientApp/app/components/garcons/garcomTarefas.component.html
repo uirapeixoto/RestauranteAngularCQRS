@@ -20,7 +20,7 @@
     }
 </style>
 
-<h3>Tarefas de {{ garcom.nome}} </h3>
+<h3>Tarefas de {{ garcom.nome }} </h3>
 <div class="row">
     <div class="col-md-12">
         <div class="panel with-nav-tabs panel-default">
@@ -52,14 +52,14 @@
                                 </div>
                             </div>
                             <hr />
-                            <div class="row" id="dados" *ngFor="let mesa of garcom.mesas">
+                            <div class="row" id="dados_bebida_{{mesa.id}}" *ngFor="let mesa of garcom.mesas">
                                 <div class="col-lg-2 left text-center">
                                     <b>
                                         <a class="btn btn-default" href="/mesa-status/{{ mesa.numMesa }}">Mesa {{ mesa.numMesa }}</a>
                                     </b>
                                 </div>
-                                <div class="col-lg-10 right" *ngFor="let pedido of mesa.pedidos">
-                                    <div class="row" *ngFor="let bebida of pedido.pedidoBebidaItens">
+                                <div class="col-lg-10 right" *ngFor="let pedidos of mesa.pedidos">
+                                    <div  *ngFor="let bebida of pedidos.pedidoBebidaItens">
                                         <div class="col-md-2 text-center">
                                             {{bebida.menuItem.numMenuItem}}
                                         </div>
@@ -98,7 +98,7 @@
                                 </div>
                             </div>
                             <hr />
-                            <div class="row" id="dados" *ngFor="let mesa of garcom.mesas">
+                            <div class="row" id="dados_comida_{{mesa.id}}" *ngFor="let mesa of garcom.mesas">
                                 <div class="col-lg-2 left text-center">
                                     <b>
                                         <a class="btn btn-default" href="/mesa-status/{{ mesa.numMesa }}">Mesa {{ mesa.numMesa }}</a>

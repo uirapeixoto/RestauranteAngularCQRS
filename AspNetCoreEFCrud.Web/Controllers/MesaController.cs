@@ -1,10 +1,16 @@
-﻿using AspNetCoreEFCrud.Web.Helper;
-using AspNetCoreEFCrud.Web.ViewModel;
-using Cafe.Query.Handler;
-using Cafe.Query.Query;
-using Microsoft.AspNetCore.Mvc;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using AspNetCoreEFCrud.Web.Helper;
+using AspNetCoreEFCrud.Web.ViewModel;
+using Microsoft.AspNetCore.Mvc;
+using Cafe.Command.Command;
+using Cafe.Command.Handler;
+using Cafe.Query.Handler;
+using Cafe.Query.Query;
+
 
 namespace AspNetCoreEFCrud.Web.Controllers
 {
@@ -101,19 +107,24 @@ namespace AspNetCoreEFCrud.Web.Controllers
         }
 
         [HttpPost("[action]")]
-        public void AbrirNovaMesa([FromBody]MesaNovaViewModel value)
+        public HttpResponseMessage AbrirNovaMesa([FromBody]MesaNovaViewModel value)
         {
             try
             {
+                var guid = Guid.NewGuid();
 
+                using (var abrirNovaMesaHandler = new AbrirNovaMesaCommandHandler())
+                {
+                    abrirNovaMesaHandler.Handle(new AbrirNovaMesaCommand(value.NumMesa, value.GarcomId));
+
+                    return new HttpResponseMessage(HttpStatusCode.OK);
+                }
+                
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                return new HttpResponseMessage(HttpStatusCode.Ambiguous);
             }
-            var result = value;
-
         }
     }
 }
