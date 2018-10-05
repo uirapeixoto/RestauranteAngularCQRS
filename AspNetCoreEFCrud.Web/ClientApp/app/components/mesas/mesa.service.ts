@@ -8,8 +8,10 @@ import { Mesa } from '../shared/models/mesa.model';
 
 export class MesaService {
     public mesas: Mesa[];
+
     //URL for CRUD operations
     mesaUrl = "";
+
     //Create constructor to get Http instance
     constructor(private http: Http, @Inject('BASE_URL') baseUrl: string) {
         this.mesaUrl = baseUrl + 'api/mesa/';
@@ -22,10 +24,10 @@ export class MesaService {
 
     }
     //Create article
-    criarMesaAberta(mesa: Mesa): Observable<number> {
+    criarNovaMesa(novaMesa: AbrirMesa): Observable<number> {
         let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: cpHeaders });
-        return this.http.post(this.mesaUrl + '/abrirnova', mesa, options)
+        return this.http.post(this.mesaUrl + '/abrirnova', novaMesa, options)
             .map(success => success.status)
             .catch(this.handleError);
     }
@@ -38,15 +40,8 @@ export class MesaService {
             .map(this.extractData)
             .catch(this.handleError);
     }
-    //Update article
-    atualizarMesa(mesa: Mesa): Observable<number> {
-        let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: cpHeaders });
-        return this.http.put(this.mesaUrl + "/" + mesa.id, mesa, options)
-            .map(success => success.status)
-            .catch(this.handleError);
-    }
-    //Delete article	
+
+    //Delete article
     fechaMesaPorId(mesaId: string): Observable<number> {
         let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: cpHeaders });
@@ -54,12 +49,18 @@ export class MesaService {
             .map(success => success.status)
             .catch(this.handleError);
     }
+
     private extractData(res: Response) {
         let body = res.json();
         return body;
     }
+
     private handleError(error: Response | any) {
         console.error(error.message || error);
         return Observable.throw(error.status);
     }
 } 
+interface AbrirMesa {
+    NumMesa: number;
+    GarcomId: number;
+}
