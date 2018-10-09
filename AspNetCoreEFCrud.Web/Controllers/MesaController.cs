@@ -126,5 +126,57 @@ namespace AspNetCoreEFCrud.Web.Controllers
                 return new HttpResponseMessage(HttpStatusCode.Ambiguous);
             }
         }
+
+        [HttpGet("[action]/{id}")]
+        public PedidoViewModel Pedido(int id)
+        {
+            try
+            {
+                using (var _menuItemQueryHandler = new MenuListQueryHandler())
+                {
+                    var menu = _menuItemQueryHandler.Handle().Select(o => new MenuItemViewModel
+                    {
+                        Id = o.Id,
+                        NumMenuItem = o.NumMenuItem,
+                        Descricao = o.Descricao,
+                        Bebida = o.Bebida,
+                    });
+
+                    return new PedidoViewModel
+                    {
+                        MesaId = id,
+                        PedidoBebidaItens = menu.Where(x => x.Bebida).Select(m => new PedidoItemViewModel
+                        {
+                            MenuItem = new MenuItemViewModel
+                            {
+                                Id = m.Id,
+                                NumMenuItem = m.NumMenuItem,
+                                Descricao = m.Descricao,
+                                Bebida = m.Bebida,
+                                Ativo = m.Ativo
+                            }
+                        }).OrderBy(x => x.MenuItem.NumMenuItem).ToList(),
+                        PedidoComidaItens = menu.Where(x => !x.Bebida).Select(m => new PedidoItemViewModel
+                        {
+                            MenuItem = new MenuItemViewModel
+                            {
+                                Id = m.Id,
+                                NumMenuItem = m.NumMenuItem,
+                                Descricao = m.Descricao,
+                                Bebida = m.Bebida,
+                                Ativo = m.Ativo
+                            }
+                        }).OrderBy(x => x.MenuItem.NumMenuItem).ToList()
+                    };
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
+
+
 }

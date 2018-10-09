@@ -1,66 +1,39 @@
-import { Inject } from '@angular/core';
-import { Http, Response, Headers, URLSearchParams, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Injectable, Inject } from '@angular/core';
+import { Http, Response, RequestOptions, RequestMethod } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
+import { NovaMesa } from '../shared/models/novamesa.Model';
+import { Mesa } from '../shared/models/mesa.Model';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 
-import { Mesa } from '../shared/models/mesa.model';
-
+@Injectable()
 export class MesaService {
-    public mesas: Mesa[];
+    mesaUrl: string;
+    novamesa: NovaMesa;
 
-    //URL for CRUD operations
-    mesaUrl = "";
-
-    //Create constructor to get Http instance
     constructor(private http: Http, @Inject('BASE_URL') baseUrl: string) {
-        this.mesaUrl = baseUrl + 'api/mesa/';
+        this.mesaUrl = baseUrl + 'api/mesa';
+        this.novamesa = new NovaMesa();
     }
-    //Fetch all articles
-    obterMesasAbertas(): Observable<Mesa[]> {
+
+    obterMesasAbertas() {
         return this.http.get(this.mesaUrl + '/mesasabertas')
-            .map(this.extractData)
-            .catch(this.handleError);
-
-    }
-    //Create article
-    criarNovaMesa(novaMesa: AbrirMesa): Observable<number> {
-        let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: cpHeaders });
-        return this.http.post(this.mesaUrl + '/abrirnova', novaMesa, options)
-            .map(success => success.status)
-            .catch(this.handleError);
-    }
-    //Fetch article by id
-    obterMesaPorId(mesaId: string): Observable<Mesa> {
-        let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: cpHeaders });
-        console.log(this.mesaUrl + "/" + mesaId);
-        return this.http.get(this.mesaUrl + "/" + mesaId)
-            .map(this.extractData)
-            .catch(this.handleError);
+            .map((response: Response) => response.json())
+            .catch(this.errorHandler);
     }
 
-    //Delete article
-    fechaMesaPorId(mesaId: string): Observable<number> {
-        let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: cpHeaders });
-        return this.http.delete(this.mesaUrl + "/" + mesaId)
-            .map(success => success.status)
-            .catch(this.handleError);
+    abrirNovaMesa(mesa: NovaMesa): Observable<NovaMesa> {
+
+        return this.http.post(this.mesaUrl + '/abrirnovamesa', mesa)
+            .map((response: Response) => response.json())
+            .catch(this.errorHandler);
     }
 
-    private extractData(res: Response) {
-        let body = res.json();
-        return body;
+    errorHandler(error: Response) {
+        console.log(error);
+        return Observable.throw(error);
     }
-
-    private handleError(error: Response | any) {
-        console.error(error.message || error);
-        return Observable.throw(error.status);
-    }
-} 
-interface AbrirMesa {
-    NumMesa: number;
-    GarcomId: number;
 }

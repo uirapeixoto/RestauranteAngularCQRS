@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppModuleShared } from './app.shared.module';
 import { AppComponent } from './components/app/app.component';
+import { MesaService } from './components/mesas/mesa.service';
 
 @NgModule({
     bootstrap: [ AppComponent ],
@@ -10,7 +11,9 @@ import { AppComponent } from './components/app/app.component';
         AppModuleShared
     ],
     providers: [
-        { provide: 'BASE_URL', useFactory: getBaseUrl }
+        {
+            provide: 'BASE_URL', useFactory: getBaseUrl
+        }
     ]
 })
 export class AppModule {

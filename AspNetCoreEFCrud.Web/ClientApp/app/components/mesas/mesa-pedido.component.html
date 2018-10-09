@@ -1,0 +1,82 @@
+<h3>Pedido</h3>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel with-nav-tabs panel-default">
+            <div class="panel-heading">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1default" data-toggle="tab">Bebidas</a></li>
+                    <li><a href="#tab2default" data-toggle="tab">Comida</a></li>
+                </ul>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" role="form" [formGroup]="pedidoMesaForm" (ngSubmit)="Pedir()" #formDir="ngForm" novalidate>
+                    <div class="tab-content">
+                        <input type="hidden" name="pedido.mesaId" value="{{ pedido.mesaId }}" />
+                        <div class="tab-pane fade in active" id="tab1default">
+                            <table class="table table-responsive table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="15%">N&ordm; Menu</th>
+                                        <th width="65%">Descri&ccedil;&atilde;o</th>
+                                        <th width="20%">Quant</th>
+                                        <th>&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let pedidoBebidaItem of pedido.pedidoBebidaItens, let i index">
+                                        <td>
+                                            {{ pedidoBebidaItem.menuItem.numMenuItem }}
+                                            <input type="hidden" data-val="true" name="pedido.pedidoBebidaItens[i].menuItem.id" value="{{ pedidoBebidaItem.menuItem.numMenuItem }}" />
+
+                                        </td>
+                                        <td>
+                                            {{ pedidoBebidaItem.menuItem.descricao }}
+
+                                        </td>
+                                        <td>
+                                            <input type="number" name="pedido.pedidoBebidaItens[i].quantidade" value="0" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="tab2default">
+                            <table class="table">
+                                <tr>
+                                    <th>
+                                        N&ordm; Menu
+                                    </th>
+                                    <th>
+                                        Descri&ccedil;&atilde;o
+                                    </th>
+                                    <th>
+                                        Quant
+                                    </th>
+                                    <th></th>
+                                </tr>
+                                <tbody>
+                                    <tr *ngFor="let pedidoComida of pedido.pedidoComidaItens">
+                                        <td>
+                                            {{ pedidoComida.menuItem.numMenuItem}}
+                                        </td>
+                                        <td>
+                                            {{ pedidoComida.menuItem.descricao }}
+                                        </td>
+                                        <td>
+                                            <input type="text" name="pedidoBebida[{{ pedidoComida.menuItem.id }}]" value="" class="number" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="tab3default">Default 3</div>
+                    </div>
+                    <button type="submit" class="btn">Fazer Pedido</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

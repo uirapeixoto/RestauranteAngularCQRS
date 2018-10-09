@@ -30,6 +30,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\shared\models\novamesa.Model.ts" />
+    <None Remove="ClientApp\app\components\shared\models\Pedido.model.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Cafe.Command\Cafe.Command.csproj" />
     <ProjectReference Include="..\Cafe.Domain\Cafe.Domain.csproj" />
     <ProjectReference Include="..\Cafe.Infra\Cafe.Infra.csproj" />
@@ -38,6 +43,11 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\app\components\shared\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\shared\models\novamesa.Model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shared\models\Pedido.model.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

@@ -3,6 +3,9 @@ import { Http, Response, Headers, URLSearchParams, RequestOptions } from '@angul
 import { NgForm, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';  
 import { Observable } from 'rxjs';
+
+import { NovaMesa } from '../shared/models/novamesa.Model';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -19,6 +22,7 @@ export class MesaAbrirFormComponent implements OnInit {
     
     public novaMesaForm: FormGroup;
     public title: string;
+    public successMessage: string = "";
 
     errorMessage: any;
     mesaUrl: string;
@@ -28,6 +32,7 @@ export class MesaAbrirFormComponent implements OnInit {
         private _avRoute: ActivatedRoute,
         private _router: Router,
         private http: Http,
+        private mesaService: MesaService,
         @Inject('BASE_URL') baseUrl: string) {
 
         this.title = "Abrir Nova Mesa";
@@ -40,7 +45,7 @@ export class MesaAbrirFormComponent implements OnInit {
         this.novaMesaForm = this._fb.group(
             {
                 numMesa: [1, [Validators.required]],
-                garcomId: [this.garcons, [Validators.required]]
+                garcomId: [1, [Validators.required]]
             }
         )
     }
@@ -49,16 +54,15 @@ export class MesaAbrirFormComponent implements OnInit {
     }
 
     salvar() {
-        if (this.novaMesaForm.valid) {
-            console.log("formulario invalido!")
+        if (!this.novaMesaForm.valid) {
+            console.log("formulario invalido!", this.novaMesaForm.value)
             return;
+        } else {
+            this.mesaService.abrirNovaMesa(this.novaMesaForm.value)
+                .subscribe((data) => {
+                    this.successMessage = "Nova mesa aberta";
+                }, error => this.errorMessage = error)  
         }
-        console.log("segue a validacao!")
-        let cpHeaders = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: cpHeaders });
-        return this.http.post(this.mesaUrl + '/abrirnova', this.novaMesaForm.value, options)
-            .map((response: Response) => response.json()).catch(this.handleError);
-
     }
 
     private extractData(res: Response) {
@@ -71,11 +75,6 @@ export class MesaAbrirFormComponent implements OnInit {
         return Observable.throw(error.status);
     }
 
-}
-
-interface NovaMesa {
-    numMesa: number;
-    garcomId: number;
 }
 
 interface Garcom {
