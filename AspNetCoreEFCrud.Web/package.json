@@ -6,7 +6,7 @@
     "test": "karma start ClientApp/test/karma.conf.js"
   },
   "devDependencies": {
-    "@angular/animations": "4.2.5",
+    "@angular/animations": "^4.2.5",
     "@angular/common": "4.2.5",
     "@angular/compiler": "4.2.5",
     "@angular/compiler-cli": "4.2.5",
@@ -58,5 +58,9 @@
     "webpack-hot-middleware": "2.18.2",
     "webpack-merge": "4.1.0",
     "zone.js": "0.8.12"
+  },
+  "dependencies": {
+    "@angular/cdk": "^6.4.7",
+    "@angular/material": "^6.4.7"
   }
 }

@@ -24,11 +24,15 @@ Cafe.Contract/obj/Debug/netcoreapp2.0/Cafe.Contract.pdb
 Cafe.Contract/obj/Debug/netcoreapp2.0/Cafe.Contract.csproj.CoreCompileInputs.cache
 Cafe.Contract/obj/Cafe.Contract.csproj.nuget.g.props
 Cafe.Contract/obj/Cafe.Contract.csproj.nuget.cache
+Cafe.Contract/obj/*
+Cafe.Command/bin/*
+Cafe.Domain/obj/*
 Cafe.Contract/bin/Debug/netcoreapp2.0/Cafe.Contract.pdb
 Cafe.Command/obj/project.assets.json
 Cafe.Command/obj/Debug/netcoreapp2.0/Cafe.Command.csproj.CoreCompileInputs.cache
 Cafe.Command/obj/Cafe.Command.csproj.nuget.g.props
 Cafe.Command/obj/Cafe.Command.csproj.nuget.cache
+Cafe.Command/obj/*
 Cafe.Command/bin/Debug/netcoreapp2.0/Cafe.Command.pdb
 Cafe.AppConsole/obj/project.assets.json
 Cafe.AppConsole/obj/Cafe.AppConsole.csproj.nuget.g.props
